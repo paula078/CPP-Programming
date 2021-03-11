@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+float a;      //base of triangle
+float h;      //height of triangle
+float area;
+
+cout << "Enter base of triangle:  ";
+cin >> a;
+cout << "Enter height of triangle: ";
+cin >> h;
+
+area = (a*h)/2;
+
+cout << "Area of triangle: " << area;
+}
