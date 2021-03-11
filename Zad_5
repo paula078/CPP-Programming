@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+int a;
+cout << "Enter the integer: ";
+cin >> a;
+cout << "Twice the value of a given number:  "<< a*2;
+}
