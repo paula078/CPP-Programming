@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int number_1;
+int number_2;
+int product;
+
+cout << "Enter first number: ";
+cin >> number_1;
+cout << "Enter second number: ";
+cin >> number_2;
+
+product = number_1*number_2;
+
+cout << "Product: " << product;
+}
