@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+int a=3;      //side of the square
+int H=7;      //the height of the pyramid
+float area;     //area of base
+float V;        //the volume of the pyramid
+
+area=a*a;
+V=(area*H)/3;
+
+cout << "The volume of pyramid: " << V;
+}
