@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+float t1,t2,m;
+float c;      // capital after the change
+float profit;
+
+cout << "Enter the current rate: ";
+cin >> t1;
+cout << "Enter a later rate: ";
+cin >> t2;
+cout << "Enter available capital: ";
+cin >> m;
+
+if (t2>t1){
+
+    c= (m*t2)/t1;
+    profit= c-m;
+
+    cout <<"Profit: "<< profit <<endl;
+}
+else{cout << "No profit";}
+}
