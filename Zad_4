@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+float a,b,c;
+
+cout << "Enter three numbers: ";
+cin >> a >> b >> c;
+
+if ((a==b)||(b==c)||(a==c)){
+        cout << "Any two of entered numbers are equal to each other";
+
+}
+else{ cout << "Entered numbers aren't equal to each other"; }
+
+}
