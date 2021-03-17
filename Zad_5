@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+float a,b,c;
+
+cout << "Enter a value for the three sides: ";
+cin >> a >> b >> c;
+
+
+if((a+b>c)&&(a+c>b)&&(b+c>a))
+    {
+    cout << "You can draw a triangle";
+    }
+else{ cout << "You can't draw a triangle"; }
+}
