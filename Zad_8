@@ -1,0 +1,51 @@
+//Zad_8
+
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main(){
+
+int a;        // generated number
+int x;        // guess
+int limit=0;    // trials
+bool stan = false;
+
+cout << "I generated random number from the range <0-100>, guess what number it is!" << endl;
+srand(time(NULL));
+a = rand()%101;
+//cout << a  << endl;
+
+
+for(int i=0; i<10; i ++ ){
+cout << "Enter a number: " << endl;
+cin >> x;
+limit++;
+
+if(a==x){
+
+    cout << "\tCongratulations! You win!" << endl;;
+    stan = true;
+    break;
+
+}
+else if (x>a){
+
+    cout << "The number you have to guess is lower " << endl;
+
+}
+else{
+    cout << "The number you have to guess is greater" << endl;;
+}
+}
+
+if(stan){
+
+    cout << "You guessed after: "<< limit << " tries.";
+}
+else{
+    cout << "\tGame over, you lost!" <<endl;
+    cout << "You used "<< limit << " possible trials";
+}
+return 0;
+}
