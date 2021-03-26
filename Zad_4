@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+int a,b,x;
+
+cout << "Enter two numbers: ";
+cin >> a >> b;
+
+do {
+    x=a%b;
+    a=b;
+    b=x;
+    }
+    while(b!=0);
+    cout << a;
+
+return 0;
+}
+
