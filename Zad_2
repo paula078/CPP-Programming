@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+int n;
+int x=1;     //strong number
+
+cout << "Enter a integer:";
+cin >> n;
+
+for (int i = n; i>=1; i--){
+    x*=i;
+}
+cout <<"Strong number of n ="<< x;
+
+return 0;
+}
