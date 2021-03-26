@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int n;
+
+    cout << "Enter the amount of numbers: ";
+    cin >> n;
+
+if (n==1) {
+    cout << 2;
+}
+else{
+    n--;
+    cout << 2<< " ";
+    for (int i = 3; n>0; i+=2) {
+        bool prime = true;
+            for (int k = 2; k < i/2; k++)
+                if (i % k == 0) {
+                    prime = false;
+                    break;
+                }
+
+
+            if (prime) {
+                cout << i <<  " ";
+                n--;
+            }
+        }
+    }
+return 0;
+}
