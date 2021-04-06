@@ -1,0 +1,17 @@
+#include <time.h>
+#include <windows.h>
+#include <iostream>
+using namespace std;
+
+int main(){
+int B[12];
+
+srand(time(NULL));
+for(int i=0; i<12; i++ )
+{
+B[i] = rand()%10+1;
+
+cout << "B[" << i+1 << "]=" << B[i] << endl;
+
+}
+}
