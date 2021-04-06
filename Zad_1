@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+
+int A [5];
+int sum=0;
+int product=1;
+float sumh=0;
+float sumr=0;
+
+for(int i=0 ; i<5 ; i++) {
+
+        A[i] = 2*i+1;
+        sum+=A[i];
+        product*=A[i];
+        sumh+=(float)1/A[i];
+        sumr+=(A[i]*A[i]);
+        cout << A[i] << endl;
+
+}
+
+float ari;    //Arithmetic mean
+float geo;    //Geometric mean
+float har;    //Harmonic mean
+float rms;    //Root mean square
+float x;
+
+//Arithmetic mean
+
+ari=sum/5;
+cout << "Arithmetic mean = " << ari << endl;
+
+//Geometric mean
+
+geo=pow(product,0.2);
+cout << "Geometric mean = " << geo << endl;
+
+ //Harmonic mean
+
+har = 5/sumh;
+cout << "Harmonic mean = " << har << endl;
+
+ //Root mean square
+
+ rms = sqrt(sumr/5);
+ cout << "Root mean square = " << rms << endl;
+}
