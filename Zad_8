@@ -1,0 +1,61 @@
+#include <time.h>
+#include <windows.h>
+#include <iostream>
+using namespace std;
+
+int main(){
+
+int B[12];
+int x;
+int maxi;
+int licz;
+bool zmiana;
+
+srand(time(NULL));
+for(int i=0; i<12; i++ )
+{
+B[i] = rand()%10+1;
+}
+
+//Sortowanie
+do{
+zmiana=0;
+for(int i=10; i>=0; i-- )
+{
+    if(B[i]>B[i+1])
+    {
+        x=B[i];
+        B[i]=B[i+1];
+        B[i+1]=x;
+        zmiana=1;
+    }
+}
+}
+while(zmiana==1);
+
+
+cout << "Posortowana:" <<endl;
+for(int i=0; i<12; i++ ){
+cout << "B[" << i+1 << "]="<< B[i] << endl;
+}
+
+for(int i=0; i<12; i++ )
+{
+    licz=0;
+
+    for(int j=0; j<12; j++ )
+    if (B[i]==B[j]){
+        licz++;
+    }
+
+    if(licz>maxi){
+        maxi=licz;
+    }
+}
+cout << "Moda = ";
+for(int i=0; (i+maxi-1)<12; i++ )
+   if( B[i]==B[i+maxi-1])
+   cout << B[i] <<" ";
+
+cout <<" Ilosc wystapien = "<< maxi ;
+}
