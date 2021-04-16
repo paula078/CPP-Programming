@@ -1,0 +1,24 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main(){
+int tab[20][20][3];
+int A[20][20];
+
+srand(time(NULL));
+
+for(int i=0; i<20; i++){
+    for(int j=0; j<20; j++){
+            float sum=0;
+        for(int k=0; k<3; k++){
+            tab[i][j][k]=rand()%256;
+            sum+=tab[i][j][k];
+        }
+         A[i][j]=sum/3.;
+         cout <<A[i][j]<<"  ";
+    }
+    cout << endl;
+}
+return 0;
+}
