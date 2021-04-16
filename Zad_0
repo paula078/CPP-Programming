@@ -1,0 +1,22 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+int n=7;
+int C[n][n];
+srand(time(NULL));
+
+for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++)
+    C[i][j]=rand()%21-10;
+}
+for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++)
+    cout << C[i][j] <<"\t";
+
+    cout << "\n";
+}
+return 0;
+}
