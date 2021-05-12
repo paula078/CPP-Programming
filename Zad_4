@@ -1,0 +1,33 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main(){
+int a;
+
+cout << "Podaj liczbe naturalna <=20:" << endl;
+cin >> a;
+
+cout << "Wprowadzone liczby:" <<endl;
+int *tab = new int[a];
+
+for(int i=0; i<a; i++)
+{
+    cin >>*(tab+i);
+}
+int *tab2 = new int[a];
+int i=0;
+for(int j=0; j<a; j++)
+{
+    *(tab2+i)=*(tab+i)%3;
+    i++;
+}
+cout << "\nReszty z dzielenia:"<<endl;
+for(int j=0; j<a; j++)
+    cout << *(tab2+j) <<endl;
+
+    delete []tab;
+    delete []tab2;
+
+    return 0;
+}
