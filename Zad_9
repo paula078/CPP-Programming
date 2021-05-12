@@ -1,0 +1,33 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main(){
+int n=0;
+int m=0;  //ilosc przesuniec
+cin>> n;
+cout<< endl;
+srand(time(NULL));
+int *A = new int[n];
+int *B = new int[n];
+
+for(int i=0; i<n; i++)
+{
+    *(A+i)=rand()%11;
+    cout << *(A+i)<<"\t";
+}
+
+cout << "\nPodaj ilosc przesuniec:";
+cin >> m;
+
+for(int i=0; i<n; i++)
+{
+     *(B+i)=*(A+(i-(m%n)+n)%n);
+
+     cout << *(B+i) <<"\t";
+}
+
+delete []A;
+delete []B;
+return 0;
+}
