@@ -1,0 +1,34 @@
+#include <iostream>
+#include<time.h>
+using namespace std;
+
+int main(){
+int n=0;
+int m=0;
+cin >>n;
+
+int **A = new int*[n];
+
+for(int i=0; i<n; i++){
+*(A+i)= new int[n+1];
+}
+//uzupelnienie trojkąta samymi 1
+for(int i=0; i<n; i++){
+    for(int k=0; k<i+1; k++)
+    *(*(A+i)+k)=1;
+}
+
+for(int i=2; i<n; i++){
+    for(int k=1; k<i; k++){
+    *(*(A+i)+k)=*(*(A+i-1)+k)+*(*(A+i-1)+k-1);
+}
+}
+for(int i=0; i<n; i++){
+    for(int k=0; k<i+1; k++){
+    cout << *(*(A+i)+k)<< " ";
+
+}
+cout <<endl;
+}
+delete []A;
+}
