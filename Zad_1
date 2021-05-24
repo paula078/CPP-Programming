@@ -1,0 +1,44 @@
+#include <iostream>
+#include<time.h>
+using namespace std;
+
+int main(){
+int n;
+int tmp;
+int *p_tmp=&tmp;
+
+cin >>n;
+srand(time(NULL));
+
+int *A = new int[n];
+int *B = new int[n];
+
+cout << "Przed zamiana:" <<endl;
+cout <<"A"<<endl;
+for(int i=0; i<n;i++){
+    *(A+i)=rand()%11;
+    cout<<*(A+i)<<" ";
+}
+cout <<"\nB"<<endl;
+for(int i=0; i<n;i++){
+    *(B+i)=rand()%11;
+    cout<<*(B+i)<<" ";
+}
+cout << "\nPo zamianie:" <<endl;
+
+for(int j=0;j<n;j++){
+    *p_tmp=*(A+j);
+    *(A+j)=*(B+j);
+    *(B+j)=*p_tmp;
+}
+cout <<"A"<<endl;
+for(int i=0; i<n;i++)
+    cout<<*(A+i)<<" ";
+
+cout <<"\nB"<<endl;
+for(int i=0; i<n;i++)
+    cout<<*(B+i)<<" ";
+
+delete []A;
+delete []B;
+}
