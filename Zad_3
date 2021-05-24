@@ -1,0 +1,42 @@
+#include <iostream>
+#include<time.h>
+using namespace std;
+
+int main(){
+int n;
+int m;
+
+cout << "Podaj stopnie wielomianow:"<<endl;
+cin >> n >> m;
+
+int *A = new int[n+1];  //+1 uwzglednia el.0
+int *B = new int[m+1];
+int *C = new int[n+m+1];
+srand(time(NULL));
+
+for(int i=0;i<=n; i++){
+   *(A+i)=rand()%11;
+   cout << *(A+i) << " ";
+}
+cout <<endl;
+for(int j=0; j<=m; j++){
+   *(B+j)=rand()%11;
+    cout << *(B+j) << " ";
+}
+cout <<endl;
+for(int k=0; k<=(n+m+1); k++)
+   *(C+k)=0;
+
+cout <<endl;
+for(int i=0;i<=n; i++){
+    for(int j=0; j<=m; j++)
+        *(C+i+j)+=(*(A+i))*(*(B+j));
+}
+for(int k=0; k<=(n+m); k++)
+    cout << *(C+k) << " ";
+
+delete []A;
+delete []B;
+delete []C;
+
+}
