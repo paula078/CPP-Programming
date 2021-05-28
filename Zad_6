@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+long long silnia(int n){
+int silnia=1;
+if(n<2)
+    return 1;
+else{
+    for(int i=n; i>1; i=i-2)
+       silnia=silnia*i;
+
+    return silnia;
+}
+}
+
+int main(){
+int n;
+cin >>n;
+cout << silnia(n);
+
+return 0;
+}
