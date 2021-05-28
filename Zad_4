@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int Fib(int &n)
+{
+int tmp=0;
+int a=1;
+int b=1;
+
+if(n==1||n==2)
+     return 1;
+else{
+    for(int i=3; i<=n; i++){
+        tmp= a+b;
+        a=b;
+        b=tmp;
+}
+return tmp;
+}
+}
+
+int main()
+{
+  int n;
+  cin >> n;
+  cout <<Fib(n);
+  return 0;
+}
