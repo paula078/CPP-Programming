@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int add(int x, int y);
+int multiply(int x, int y);
+int operation(int (*funkcja)(int, int),int x, int y);
+
+int main()
+{
+   int x;
+   int y;
+   char q;
+   int funkcja;
+   cin >> x >> y >> q;
+   if (q =='a'){
+    cout << operation(add,x,y);
+   }else if (q =='m')
+   {
+     cout << operation(multiply,x,y);
+   }
+
+return 0;
+}
+
+int add(int x, int y){
+  return x+y;
+}
+
+int multiply(int x, int y){
+  return x*y;
+}
+
+int operation(int (*funkcja)(int, int),int x, int y){
+  return funkcja(x,y);
+}
