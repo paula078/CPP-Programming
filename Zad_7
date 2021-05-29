@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void yes();
+void no();
+void vote( void(*funkcja)());
+
+int main(){
+
+char choice;
+cin >> choice;
+if (choice=='y'){
+    vote(&yes);
+}
+if (choice=='n')
+vote(&no);
+
+return 0;
+}
+
+void yes(){
+cout << "Yes!" << endl;
+}
+void no(){
+cout << "No!" << endl;
+}
+
+void vote(void(*funkcja)()){
+funkcja();
+}
