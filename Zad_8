@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+string dec2bin(string s){
+int len;
+int k = stoi(s);
+len=s.length();
+int reszta=0;
+int cnt=0;
+int tab[20];
+string wynik;
+
+while(k!=0){
+    reszta=k%2;
+    tab[cnt]=reszta;
+    k/=2;
+    cnt++;
+}
+
+
+for(int j=cnt-1;j>=0;j--){
+	wynik+=to_string(tab[j]);
+}
+return wynik;
+
+}
+
+int main(){
+
+string dec="10";
+
+cout << dec2bin(dec);
+
+return 0;
+}
