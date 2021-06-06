@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+void histogram(string tekst){
+int cnt=0;
+
+int length=tekst.length();
+
+char letter[26]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+int tab_sum[26]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+for(int i=0; i<26; i++){
+        for(int j=0;j<length; j++){
+            if(tekst[j]==letter[i]){
+            cnt++;
+            }
+        }
+            tab_sum[i]+=cnt;
+            cnt=0;
+    }
+
+    for(int i=0; i<26; i++){
+        cout << letter[i]<<" = "<<tab_sum[i]<<endl;
+    }
+}
+
+int main(){
+string tekst= "aabbbbcccnao aaonoz";
+histogram(tekst);
+
+return 0;
+}
