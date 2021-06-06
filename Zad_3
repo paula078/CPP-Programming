@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+string con(string s1, string s2){
+return s1+s2;
+}
+
+int main(){
+string s1="Kon";
+string s2="katenacja";
+
+cout <<con(s1,s2);
+return 0;
+}
