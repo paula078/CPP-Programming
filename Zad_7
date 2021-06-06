@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+string bin2dec(string s){
+int len;
+int k=0;
+int sum=0;
+len=s.length();
+
+for(int i=len-1; i>=0; i--){
+        if(s[i]=='1'){
+    sum+=int(s[i]-'0')*pow(2,k);
+        }
+    k++;
+}
+
+return to_string(sum);
+}
+int main(){
+string bin ="1100";
+
+cout << bin2dec(bin);
+
+return 0;
+}
