@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+bool dirty(string s){
+int w_length;
+w_length=s.length();
+
+for(int i=0; i<w_length; i++){
+        for(int j=0;j<26;j++){
+    if (s[i]>=33&&s[i]<=64)
+        return 1;
+    if(s[i]>=91&&s[i]<=96)
+        return 1;
+    if(s[i]>=123&&s[i]<=126)
+        return 1;
+}
+}
+    return 0;
+}
+
+int main(){
+
+string word="Kot.";
+
+cout << dirty(word);
+
+return 0;
+}
