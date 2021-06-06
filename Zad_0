@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>      
+#include <cmath>     
+using namespace std;
+
+bool  pal(string  s){
+int len;
+len=s.length();
+for (int i=0; i<len/2;i++){
+    if(s[i]!=s[len-1-i])
+        return 0;
+}
+return 1;
+}
+
+int main()
+{
+ string word="kobylamamalybok";
+cout << pal(word);
+
+return 0;
+}
