@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+string filter(string s, char k){
+int len;
+bool flag =0;
+len=s.length();
+
+for(int i=0; i<len; i++){
+    if(s[i]==k){
+        for(int j=i; j<len; j++)
+        s[j]=s[j+1];
+    }
+}
+return s;
+}
+
+int main(){
+char sign='a';
+string word= "akwamarena";
+
+cout << filter(word,sign);
+
+return 0;
+}
