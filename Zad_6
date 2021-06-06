@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+bool pesel(string s){
+int w_length;
+int result=0;
+w_length=s.length();
+int k=1;
+int p=0;
+int sum=0;
+if(w_length==11){
+    for(int i=0; i<w_length-1; i++){
+            p=s[i]-'0';  //Zamienia na rzeczywista wartosc z kodu ascci '0' - 48
+    if(i%4==0)
+        sum+=p;
+    else if(i%4==1)
+        sum+=(p*3)%10;
+    else if(i%4==2)
+        sum+=(p*7)%10;
+    else if(i%4==3)
+        sum+=(p*9)%10;
+    }
+
+sum=sum%10;
+result =10-sum;
+
+if(result==s[w_length-1]-'0')
+    return 1;
+else
+    return 0;
+
+}
+return 0;
+}
+
+int main(){
+string s="03251010586";
+cout<<pesel(s);
+
+return 0;
+}
