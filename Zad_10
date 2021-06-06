@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+string convert(string number){
+int dec[] ={1000,900,500,400,100,90,50,40,10,9,5,4,1};
+string rom[]={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I",};
+string result;
+
+if(number.front()>='1'&&number.front()<='9'){
+
+    //decimal to roman
+    int decimal_n=stoi(number);
+
+    for(int i=0;i<13; i++){
+
+            while(decimal_n%dec[i]<decimal_n){
+                result+=rom[i];
+                decimal_n-=dec[i];
+    }
+    }
+}
+//roman to decimal
+else{
+int dec_result=0;
+    for(int j=0; j<13; j++){
+
+        while(number.find(rom[j])==0){
+            dec_result+=dec[j];
+            number.erase (number.find_first_of(rom[j]), rom[j].length());
+        }
+    }
+    result= to_string(dec_result);
+
+}
+return result;
+}
+
+
+int main(){
+string number ="49";
+cout <<convert(number);
+
+return 0;
+}
